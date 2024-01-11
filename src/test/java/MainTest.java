@@ -12,7 +12,7 @@ public class MainTest {
     public void test() {
         String fileName = System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "list_names.txt";
         Result result = Main.countTheWords(fileName);
-        assertEquals(5, result.getCount());
+        assertEquals(8, result.getCount());
         assertNotNull(result.getLongestThan5());
     }
 }

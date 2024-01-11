@@ -1,14 +1,12 @@
 
 n
-java:S2095*"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(õñûºÿÿÿÿÿ8ÎäõæÎ1
-L	java:S106"+Replace this use of System.out by a logger.(‘ÈœÅÿÿÿÿÿ8ÒäõæÎ1
-G	java:S106"+Replace this use of System.out by a logger.(œŞ„é8ÓäõæÎ1
-G	java:S106"+Replace this use of System.out by a logger.(ñß¨š8ÓäõæÎ1
-]	java:S125"<This block of commented-out lines of code should be removed.(Õ€†Ãüÿÿÿÿ8ÔäõæÎ1
+java:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(õñûºÿÿÿÿÿ8µˆ³µÏ1
+L	java:S106"+Replace this use of System.out by a logger.(‘ÈœÅÿÿÿÿÿ8¾ˆ³µÏ1
+G	java:S106"+Replace this use of System.out by a logger.(œŞ„é8Áˆ³µÏ1
+G	java:S106"+Replace this use of System.out by a logger.(ñß¨š8Ãˆ³µÏ1
 o
-java:S62040"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8×äõæÎ1
+java:S6204&"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8Ïˆ³µÏ1
 a
-java:S1612/"?Replace this lambda with method reference 'String.class::cast'.(‡ïÇ×şÿÿÿÿ8ØäõæÎ1
-]	java:S1257"<This block of commented-out lines of code should be removed.(½­ôçøÿÿÿÿ8Â£öæÎ1
-G	java:S106C"+Replace this use of System.out by a logger.(×ÃÊÓ8ÚäõæÎ1
-L	java:S106E"+Replace this use of System.out by a logger.(™‰ƒ§üÿÿÿÿ8ÚäõæÎ1
+java:S1612%"?Replace this lambda with method reference 'String.class::cast'.(‡ïÇ×şÿÿÿÿ8Ñˆ³µÏ1
+G	java:S1061"+Replace this use of System.out by a logger.(×ÃÊÓ8Õˆ³µÏ1
+L	java:S1063"+Replace this use of System.out by a logger.(™‰ƒ§üÿÿÿÿ8Öˆ³µÏ1
