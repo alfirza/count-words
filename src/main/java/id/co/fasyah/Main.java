@@ -1,9 +1,9 @@
 package id.co.fasyah;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,7 +22,7 @@ public class Main {
     public static Result countTheWords(String fileName) {
         /* initialize the variable that will return */
         Result result = new Result();
-        int count = 0;
+        AtomicInteger count = new AtomicInteger();
         List<String> longerThan5 = new ArrayList<>();
 
         try {
@@ -32,14 +32,18 @@ public class Main {
 
             /* loop the words from file */
             while ((line = br.readLine()) != null) {
-                /* business rule for counting the number of words that start with 'M' or 'm' by uppercasing the words*/
-                if (line.toUpperCase().startsWith("M")) {
-                    count++;
-                }
-                /* business rule for keep the words that longer than 5 chars */
-                if (line.length() > 5) {
-                    longerThan5.add(line);
-                }
+                /* tokenize the string of words and collect to the List */
+                List<String> words = Collections.list(new StringTokenizer(line)).stream()
+                        .map(token -> (String) token)
+                        .collect(Collectors.toList());
+
+                words.forEach(w -> {
+                    /* business rule for counting the number of words that start with 'M' or 'm' by uppercasing the words */
+                    if (w.toUpperCase().startsWith("M")) count.getAndIncrement();
+                    /* business rule for keep the words that longer than 5 chars */
+                    if (w.length() > 5) longerThan5.add(w);
+                });
+
             }
         } catch (FileNotFoundException e) {
             System.out.println("Unable to open file '" + fileName + "'");
@@ -47,7 +51,7 @@ public class Main {
             System.out.println("Error reading file '" + fileName + "'");
         }
 
-        result.setCount(count);
+        result.setCount(count.get());
         result.setLongestThan5(longerThan5);
         return result;
     }
